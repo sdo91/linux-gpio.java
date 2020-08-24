@@ -51,8 +51,8 @@ public class PushButtons {
 
     // Identifiers for recognizing the events when they happen.
     //
-    public static final int ID_BUTTON_1 = 1 ;
-    public static final int ID_BUTTON_2 = 2 ;
+    public static final int ID_BUTTON_1 = 6 ;
+    public static final int ID_BUTTON_2 = 7 ;
 
     // The number of milliseconds we will wait before terminating the program in absence of input.
     //
@@ -82,10 +82,10 @@ public class PushButtons {
         try ( GpioDevice       device  = new GpioDevice( PATH_TO_DEVICE )                                         ;
 
               GpioEventHandle  handle1 = device.requestEvent( new GpioEventRequest( LINE_NUMBER_BUTTON_1      ,
-                                                                                    GpioEdgeDetection.FALLING ) ) ;
+                                                                                    GpioEdgeDetection.RISING_AND_FALLING ) ) ;
 
               GpioEventHandle  handle2 = device.requestEvent( new GpioEventRequest( LINE_NUMBER_BUTTON_2      ,
-                                                                                    GpioEdgeDetection.FALLING ) ) ;
+                                                                                    GpioEdgeDetection.RISING_AND_FALLING ) ) ;
 
               GpioEventWatcher watcher = new GpioEventWatcher()                                                   ;
 
