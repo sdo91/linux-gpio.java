@@ -41,13 +41,13 @@ public class PushButtons {
 
     // Path to our GPIO device in the file system.
     //
-    public static final String PATH_TO_DEVICE = "/dev/gpiochip0" ;
+    public static final String PATH_TO_DEVICE = "/dev/gpiochip4" ;
 
 
     // The lines we are going to use.
     //
-    public static final int LINE_NUMBER_BUTTON_1 = 17 ;
-    public static final int LINE_NUMBER_BUTTON_2 = 27 ;
+    public static final int LINE_NUMBER_BUTTON_1 = 6 ;
+    public static final int LINE_NUMBER_BUTTON_2 = 7 ;
 
     // Identifiers for recognizing the events when they happen.
     //
@@ -88,9 +88,9 @@ public class PushButtons {
                                                                                     GpioEdgeDetection.FALLING ) ) ;
 
               GpioEventWatcher watcher = new GpioEventWatcher()                                                   ;
-              
+
               ) {
-              
+
             // Now that our resources are acquired, let's do the rest.
 
             // Adding our event handles to the watcher.
@@ -110,7 +110,7 @@ public class PushButtons {
             //
             while ( watcher.waitForEvent( event   ,
                                           WAIT_MS ) ) {
-            
+
                 System.out.println( event.getNanoTimestamp() + " button " + event.getId() ) ;
             }
 
@@ -118,7 +118,7 @@ public class PushButtons {
         }
 
         catch ( Throwable e ) {
-        
+
             System.out.println( "\nDamn, something went wrong ! \n" ) ;
 
             e.printStackTrace() ;
