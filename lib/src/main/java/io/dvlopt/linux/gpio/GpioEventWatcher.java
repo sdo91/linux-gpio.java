@@ -137,10 +137,13 @@ public class GpioEventWatcher implements AutoCloseable {
 
         EpollEvent epollEvent = new EpollEvent() ;
 
+        long userData = encodeUserData(handle.fd, id);
+
+        System.out.printf("addHandle userData: %d \n", userData);
+
         epollEvent
             .setFlags( eventFlags )
-            .setUserData( encodeUserData( handle.fd ,
-                                          id        ) ) ;
+            .setUserData( userData ) ;
     
         this.epoll.add( handle.fd  ,
                         epollEvent ) ;
@@ -210,6 +213,8 @@ public class GpioEventWatcher implements AutoCloseable {
                               timeout         ) ) {
 
             long userData = this.epollEvent.getUserData() ;
+
+            System.out.printf("waitForEvent userData: %d \n", userData);
 
             int id = decodeID( userData ) ;
 
