@@ -47,12 +47,12 @@ public class PushButtons {
     // The lines we are going to use.
     //
     public static final int LINE_NUMBER_BUTTON_1 = 6 ;
-    public static final int LINE_NUMBER_BUTTON_2 = 7 ;
+    public static final int LINE_NUMBER_BUTTON_2 = 5 ;
 
     // Identifiers for recognizing the events when they happen.
     //
-    public static final int ID_BUTTON_1 = 6 ;
-    public static final int ID_BUTTON_2 = 7 ;
+    public static final int ID_BUTTON_1 = 1 ;
+    public static final int ID_BUTTON_2 = 2 ;
 
     // The number of milliseconds we will wait before terminating the program in absence of input.
     //
